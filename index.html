@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-con">
+        <h1>PlayCricket</h1>
+        <h2 class="logo01">MUZAMMIL DEVELOPER-(JavaScript AutoBot Game)</h2>
+
+        <div class="nav">
+            <span class="span1"> <span class="circle" id="circle">1</span> <span id="username">PLAYER</span></span>
+            <div class="inside" id="inside">
+                <span class="img"><img src="" alt="" class="img" id="img1"></span> 
+                <span class="vs" id="vs"></span> 
+                <span class="img"><img src="" alt="" class="img" id="img2"></span>
+            </div>
+            <span class="span2"> <span>PLAYER</span> <span class="circle">2</span></span>
+        </div>
+
+        <div id="con-1" class="show">
+            <input type="text" placeholder="Enter your name" id="userinput"><br><br>
+            <p id="para1"></p>
+            <button type="button" onclick="login()" class="btn1">Log in</button>
+        </div>
+
+        <div id="con-2" class="hide">
+            <h3 id="head-1">Select Your Team</h3>
+            <h3 class="hide" id="head-2">Select Your Opponent Team</h3>
+
+            <div class="teams">
+                <img src="assets/pakistan.jpg" alt="Pakistan" class="images" onclick="Teams(id)" id="pak">
+                <img src="assets/new zealand1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="newz">
+                <img src="assets/afghanistan.png" alt="Pakistan" class="images" onclick="Teams(id)" id="afg">
+                <img src="assets/india2.png" alt="Pakistan" class="images" onclick="Teams(id)" id="ind">
+                <img src="assets/westindies1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="wes">
+                <img src="assets/austria2.png" alt="Pakistan" class="images" onclick="Teams(id)" id="aus">
+                <img src="assets/srilanka.jpeg" alt="Pakistan" class="images" onclick="Teams(id)" id="sri">
+                <img src="assets/england1.png" alt="Pakistan" class="images" onclick="Teams(id)" id="eng"><br><br>
+                <p id="para2"></p><br>
+                <button type="button" class="btn2" onclick="Toss()">Ready to Toss</button>
+            </div>
+        </div>
+
+        <div id="con-3" class="hide">
+            <button type="button" onclick="toss()" class="btn3">Head</button>
+            <button type="button" onclick="toss()" class="btn4">Tail</button>
+        </div>
+
+        <div id="con-4" class="hide">
+            <p>What will you decide?</p>
+            <button type="button" onclick="decide(id)" id="bat" class="btn5"><img src="assets/batsman-removebg-preview.png" alt="" class="img"></button>
+            <button type="button" onclick="decide(id)" id="bal" class="btn6"><img src="assets/bowllar-removebg-preview.png" alt="" class="img"></button>
+        </div>
+
+        <div id="con-5" class="hide">
+            <p id="para3"></p>
+
+            <div id="con-6">
+                <div class="con-7">
+                    <img src="" alt="" id="img3"><span id="country-name"></span><br><br>
+                    <!-- <p id="player1" class="players">Player1</p>
+                    <p id="player2" class="players">Player1</p>
+                    <p id="player3" class="players">Player1</p>
+                    <p id="player4" class="players">Player1</p>
+                    <p id="player5" class="players">Player1</p>
+                    <p id="player6" class="players">Player1</p>
+                    <p id="player7" class="players">Player1</p>
+                    <p id="player8" class="players">Player1</p>
+                    <p id="player9" class="players">Player1</p>
+                    <p id="player10" class="players">Player1</p>
+                    <p id="player11" class="players">Player1</p> -->
+                </div>
+                <button type="button" onclick="startMatch()" class="btn7">Start Match</button>
+                <div class="con-8">
+                    <span id="oppo-country-name"></span><img src="" alt="" id="img4"><br><br>
+                    <!-- <p id="player-oppo1" class="players">Player1</p>
+                    <p id="player-oppo2" class="players">Player1</p>
+                    <p id="player-oppo3" class="players">Player1</p>
+                    <p id="player-oppo4" class="players">Player1</p>
+                    <p id="player-oppo5" class="players">Player1</p>
+                    <p id="player-oppo6" class="players">Player1</p>
+                    <p id="player-oppo7" class="players">Player1</p>
+                    <p id="player-oppo8" class="players">Player1</p>
+                    <p id="player-oppo9" class="players">Player1</p>
+                    <p id="player-oppo10" class="players">Player1</p>
+                    <p id="player-oppo11" class="players">Player1</p> -->
+                </div>
+            </div>
+
+            <div id="con-9" class="hide">
+                <button type="button" onclick="matchType(id)" class="btn8" 
+                id="so">Super over</button>
+
+                <button type="button" onclick="" class="btn8 opacity" 
+                id="tm">Test match</button>
+            </div>
+
+            <div id="con-10" class="hide">
+                <h2 id="winingTeam"></h2>
+                <p id="para4"></p>
+                <p id="para5" class="hide"></p>
+                <p id="para6"></p>
+
+                <div id="con-11">
+                    <button type="button" onclick="Score()" id="imgbat" 
+                    class="hide batbalbtn">
+                    <img src="assets/batsman-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+
+                    <button type="button" onclick="Score()" id="imgbal" 
+                    class="hide batbalbtn">
+                    <img src="assets/bowllar-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+
+
+
+                    <button type="button" onclick="secondScore()" id="imgbat2" 
+                    class="hide batbalbtn">
+                    <img src="assets/batsman-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+
+                    <button type="button" onclick="secondScore()" id="imgbal2" 
+                    class="hide batbalbtn">
+                    <img src="assets/bowllar-removebg-preview.png" alt="" 
+                    class="batbal"></button>
+                </div>
+
+                <div id="scoreFooter">
+                    <span><img src="" alt="" id="img5"></span>
+
+                    <span>|</span>
+                    <span id="score"></span>
+                    <span id="wic"></span>
+                    <span id="balls"></span>
+                    <span id="Target"></span>
+                    <span>|</span>
+                    <span id="startSecondIning" class="hide" onclick="startSecond()"></span>
+
+                    <span><img src="" alt="" id="img6"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>FOLLOW ME ON,
+                ㅤㅤㅤㅤ
+                <a href="https://github.com/MuzammilDeveloperPk" class="fIcon" target="_blank"><ion-icon name ="logo-github"></ion-icon></a>
+                ㅤㅤㅤ
+                <a href="https://facebook.com" class="fIcon" target="_blank"><ion-icon name ="logo-facebook"></ion-icon></a>
+                ㅤㅤㅤ
+                <a href="https://instagram.com/" class="fIcon" target="_blank"><ion-icon name ="logo-instagram"></ion-icon></a>
+                ㅤㅤㅤ
+                <a href="https://linkedin.com/in/muzammildeveloper" class="fIcon" target="_blank"><ion-icon name ="logo-linkedin"></ion-icon></a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
